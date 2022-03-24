@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.upgrading.tugasmobileprogramming1">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_new_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_new_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.TugasMobileProgramming1">
+        <activity
+            android:name=".DataActivity"
+            android:screenOrientation="sensorPortrait"
+            android:exported="true" />
+        <activity
+            android:name=".LuasActivity"
+            android:screenOrientation="sensorPortrait"
+            android:exported="true" />
+        <activity
+            android:name=".KecepatanActivity"
+            android:screenOrientation="sensorPortrait"
+            android:exported="true" />
+        <activity
+            android:name=".WaktuActivity"
+            android:screenOrientation="sensorPortrait"
+            android:exported="true" />
+        <activity
+            android:name=".TemperaturActivity"
+            android:screenOrientation="sensorPortrait"
+            android:exported="true" />
+        <activity
+            android:name=".PanjangActivity"
+            android:screenOrientation="sensorPortrait"
+            android:exported="true" />
+        <activity
+            android:name=".BeratActivity"
+            android:screenOrientation="sensorPortrait"
+            android:exported="true" />
+        <activity
+            android:name=".MainActivity"
+            android:screenOrientation="sensorPortrait"
+            android:exported="true" />
+        <activity
+            android:name=".SplashScreen"
+            android:screenOrientation="sensorPortrait"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

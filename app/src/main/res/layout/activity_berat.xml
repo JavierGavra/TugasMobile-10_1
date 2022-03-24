@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_berat"
+    android:orientation="vertical"
+    tools:context=".BeratActivity">
+
+    <ImageButton
+        android:id="@+id/btn_back_berat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="18dp"
+        android:layout_marginTop="18dp"
+        android:src="@drawable/button_back"
+        android:backgroundTint="#00000000"/>
+
+    <ImageView
+        android:layout_width="140dp"
+        android:layout_height="40dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="30dp"
+        android:src="@drawable/logo_berat"/>
+
+    <LinearLayout
+        android:layout_marginTop="64dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="240dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="8dp"
+            android:hint="Masukkan angka">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/txt_input_berat"
+            android:background="@drawable/corner_mulus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"
+            android:layout_width="110dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:hint="Berat"
+            android:textColorHint="#FF0000">
+
+            <AutoCompleteTextView
+                android:id="@+id/autoComplete1_txt_berat"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:inputType="none"/>
+        </com.google.android.material.textfield.TextInputLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginTop="16dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="240dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="8dp"
+            android:hint="Hasil">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/tv_output_berat"
+                android:background="@drawable/corner_mulus"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="numberDecimal"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"
+            android:layout_width="110dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:hint="Berat"
+            android:textColorHint="#FF0000">
+
+            <AutoCompleteTextView
+                android:id="@+id/autoComplete2_txt_berat"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:inputType="none"/>
+        </com.google.android.material.textfield.TextInputLayout>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_convert_berat"
+        android:layout_width="263dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="40dp"
+        android:backgroundTint="@color/white"
+        android:text="Convert"
+        android:textColor="#FF0000"
+        android:textStyle="bold"
+        android:textSize="17dp"/>
+
+
+</LinearLayout>
