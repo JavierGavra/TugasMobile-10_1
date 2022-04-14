@@ -10,6 +10,7 @@ import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.Toast;
 
 import java.util.Locale;
 
@@ -73,7 +74,7 @@ public class BeratActivity extends AppCompatActivity {
                     input = Double.parseDouble(stringInput);
                 }
 
-                stringResult = ifElseMenu(option1, option2, input);
+                stringResult = opsiMenu(option1, option2, input);
                 tv_output.setText(String.valueOf(stringResult));
             }
         });
@@ -82,161 +83,164 @@ public class BeratActivity extends AppCompatActivity {
     }
 
     // Jangan di buka
-    private String ifElseMenu(String option1, String option2, double input) {
-        if (stringInput.trim().isEmpty()) {
-            stringResult = "Kosong";
-        }
-        else if (option1.equals(items[0]) && option2.equals(items[0])){
-            stringResult = stringInput;
-        } else if (option1.equals(items[0]) && option2.equals(items[1])) {
+    private String opsiMenu(String option1, String option2, double input) {
+        try {
+            if (stringInput.trim().isEmpty()) {
+                stringResult = "Kosong";
+            }
+            else if (option1.equals(items[0]) && option2.equals(items[0])){
+                stringResult = stringInput;
+            } else if (option1.equals(items[0]) && option2.equals(items[1])) {
 
-            result = MGtoHG(KGtoMG(input));
-            stringResult = String.valueOf(result);
-        } else if (option1.equals(items[0]) && option2.equals(items[2])) {
-            result = MGtoDAG(KGtoMG(input));
-            stringResult = String.valueOf(result);
-        } else if (option1.equals(items[0]) && option2.equals(items[3])) {
-            result = MGtoG(KGtoMG(input));
-            stringResult = String.valueOf(result);
-        } else if (option1.equals(items[0]) && option2.equals(items[4])) {
-            result = MGtoDG(KGtoMG(input));
-            stringResult = String.valueOf(result);
-        } else if (option1.equals(items[0]) && option2.equals(items[5])) {
-            result = MGtoCG(KGtoMG(input));
-            stringResult = String.valueOf(result);
-        } else if (option1.equals(items[0]) && option2.equals(items[6])) {
-            result = KGtoMG(input);
-            stringResult = String.valueOf(result);
+                result = MGtoHG(KGtoMG(input));
+                stringResult = String.valueOf(result);
+            } else if (option1.equals(items[0]) && option2.equals(items[2])) {
+                result = MGtoDAG(KGtoMG(input));
+                stringResult = String.valueOf(result);
+            } else if (option1.equals(items[0]) && option2.equals(items[3])) {
+                result = MGtoG(KGtoMG(input));
+                stringResult = String.valueOf(result);
+            } else if (option1.equals(items[0]) && option2.equals(items[4])) {
+                result = MGtoDG(KGtoMG(input));
+                stringResult = String.valueOf(result);
+            } else if (option1.equals(items[0]) && option2.equals(items[5])) {
+                result = MGtoCG(KGtoMG(input));
+                stringResult = String.valueOf(result);
+            } else if (option1.equals(items[0]) && option2.equals(items[6])) {
+                result = KGtoMG(input);
+                stringResult = String.valueOf(result);
+            }
+            else if (option1.equals(items[1]) && option2.equals(items[0])) {
+                result = MGtoKG(HGtoMG(input));
+                stringResult = String.valueOf(result);
+            } else if (option1.equals(items[1]) && option2.equals(items[1])) {
+                stringResult = stringInput;
+            } else if (option1.equals(items[1]) && option2.equals(items[2])) {
+                result = MGtoDAG(HGtoMG(input));
+                stringResult = String.valueOf(result);
+            } else if (option1.equals(items[1]) && option2.equals(items[3])) {
+                result = MGtoG(HGtoMG(input));
+                stringResult = String.valueOf(result);
+            } else if (option1.equals(items[1]) && option2.equals(items[4])) {
+                result = MGtoDG(HGtoMG(input));
+                stringResult = String.valueOf(result);
+            } else if (option1.equals(items[1]) && option2.equals(items[5])) {
+                result = MGtoCG(HGtoMG(input));
+                stringResult = String.valueOf(result);
+            } else if (option1.equals(items[1]) && option2.equals(items[6])) {
+                result = HGtoMG(input);
+                stringResult = String.valueOf(result);
+            }
+            else if (option1.equals(items[2]) && option2.equals(items[0])) {
+                result = MGtoKG(DAGtoMG(input));
+                stringResult = String.valueOf(result);
+            } else if (option1.equals(items[2]) && option2.equals(items[1])) {
+                result = MGtoHG(DAGtoMG(input));
+                stringResult = String.valueOf(result);
+            } else if (option1.equals(items[2]) && option2.equals(items[2])) {
+                stringResult = stringInput;
+            } else if (option1.equals(items[2]) && option2.equals(items[3])) {
+                result = MGtoG(DAGtoMG(input));
+                stringResult = String.valueOf(result);
+            } else if (option1.equals(items[2]) && option2.equals(items[4])) {
+                result = MGtoDG(DAGtoMG(input));
+                stringResult = String.valueOf(result);
+            } else if (option1.equals(items[2]) && option2.equals(items[5])) {
+                result = MGtoCG(DAGtoMG(input));
+                stringResult = String.valueOf(result);
+            } else if (option1.equals(items[2]) && option2.equals(items[6])) {
+                result = DAGtoMG(input);
+                stringResult = String.valueOf(result);
+            }
+            else if (option1.equals(items[3]) && option2.equals(items[0])) {
+                result = MGtoKG(GtoMG(input));
+                stringResult = String.valueOf(result);
+            } else if (option1.equals(items[3]) && option2.equals(items[1])) {
+                result = MGtoHG(GtoMG(input));
+                stringResult = String.valueOf(result);
+            } else if (option1.equals(items[3]) && option2.equals(items[2])) {
+                result = MGtoDAG(GtoMG(input));
+                stringResult = String.valueOf(result);
+            } else if (option1.equals(items[3]) && option2.equals(items[3])) {
+                stringResult = stringInput;
+            } else if (option1.equals(items[3]) && option2.equals(items[4])) {
+                result = MGtoDG(GtoMG(input));
+                stringResult = String.valueOf(result);
+            } else if (option1.equals(items[3]) && option2.equals(items[5])) {
+                result = MGtoCG(GtoMG(input));
+                stringResult = String.valueOf(result);
+            } else if (option1.equals(items[3]) && option2.equals(items[6])) {
+                result = GtoMG(input);
+                stringResult = String.valueOf(result);
+            }
+            else if (option1.equals(items[4]) && option2.equals(items[0])) {
+                result = MGtoKG(DGtoMG(input));
+                stringResult = String.format(Locale.GERMANY,"%,f", result);
+            } else if (option1.equals(items[4]) && option2.equals(items[1])) {
+                result = MGtoHG(DGtoMG(input));
+                stringResult = String.valueOf(result);
+            } else if (option1.equals(items[4]) && option2.equals(items[2])) {
+                result = MGtoDAG(DGtoMG(input));
+                stringResult = String.valueOf(result);
+            } else if (option1.equals(items[4]) && option2.equals(items[3])) {
+                result = MGtoG(DGtoMG(input));
+                stringResult = String.valueOf(result);
+            } else if (option1.equals(items[4]) && option2.equals(items[4])) {
+                stringResult = stringInput;
+            } else if (option1.equals(items[4]) && option2.equals(items[5])) {
+                result = MGtoCG(DGtoMG(input));
+                stringResult = String.valueOf(result);
+            } else if (option1.equals(items[4]) && option2.equals(items[6])) {
+                result = DGtoMG(input);
+                stringResult = String.valueOf(result);
+            }
+            else if (option1.equals(items[5]) && option2.equals(items[0])) {
+                result = MGtoKG(CGtoMG(input));
+                stringResult = String.format(Locale.GERMANY,"%,f", result);
+            } else if (option1.equals(items[5]) && option2.equals(items[1])) {
+                result = MGtoHG(CGtoMG(input));
+                stringResult = String.format(Locale.GERMANY,"%,f", result);
+            } else if (option1.equals(items[5]) && option2.equals(items[2])) {
+                result = MGtoDAG(CGtoMG(input));
+                stringResult = String.valueOf(result);
+            } else if (option1.equals(items[5]) && option2.equals(items[3])) {
+                result = MGtoG(CGtoMG(input));
+                stringResult = String.valueOf(result);
+            } else if (option1.equals(items[5]) && option2.equals(items[4])) {
+                result = MGtoDG(CGtoMG(input));
+                stringResult = String.valueOf(result);
+            } else if (option1.equals(items[5]) && option2.equals(items[5])) {
+                stringResult = stringInput;
+            } else if (option1.equals(items[5]) && option2.equals(items[6])) {
+                result = CGtoMG(input);
+                stringResult = String.valueOf(result);
+            }
+            else if (option1.equals(items[6]) && option2.equals(items[0])) {
+                result = MGtoKG(input);
+                stringResult = String.format(Locale.GERMANY,"%,f", result);
+            } else if (option1.equals(items[6]) && option2.equals(items[1])) {
+                result = MGtoHG(input);
+                stringResult = String.format(Locale.GERMANY,"%,f", result);
+            } else if (option1.equals(items[6]) && option2.equals(items[2])) {
+                result = MGtoDAG(input);
+                stringResult = String.format(Locale.GERMANY,"%,f", result);
+            } else if (option1.equals(items[6]) && option2.equals(items[3])) {
+                result = MGtoG(input);
+                stringResult = String.valueOf(result);
+            } else if (option1.equals(items[6]) && option2.equals(items[4])) {
+                result = MGtoDG(input);
+                stringResult = String.valueOf(result);
+            } else if (option1.equals(items[6]) && option2.equals(items[5])) {
+                result = MGtoCG(input);
+                stringResult = String.valueOf(result);
+            } else if (option1.equals(items[6]) && option2.equals(items[6])) {
+                stringResult = stringInput;
+            } else {
+                stringResult = "comming soon";
+            }
+        } catch (Exception e) {
+            stringResult = "Opsi belum dipilih";
         }
-        else if (option1.equals(items[1]) && option2.equals(items[0])) {
-            result = MGtoKG(HGtoMG(input));
-            stringResult = String.valueOf(result);
-        } else if (option1.equals(items[1]) && option2.equals(items[1])) {
-            stringResult = stringInput;
-        } else if (option1.equals(items[1]) && option2.equals(items[2])) {
-            result = MGtoDAG(HGtoMG(input));
-            stringResult = String.valueOf(result);
-        } else if (option1.equals(items[1]) && option2.equals(items[3])) {
-            result = MGtoG(HGtoMG(input));
-            stringResult = String.valueOf(result);
-        } else if (option1.equals(items[1]) && option2.equals(items[4])) {
-            result = MGtoDG(HGtoMG(input));
-            stringResult = String.valueOf(result);
-        } else if (option1.equals(items[1]) && option2.equals(items[5])) {
-            result = MGtoCG(HGtoMG(input));
-            stringResult = String.valueOf(result);
-        } else if (option1.equals(items[1]) && option2.equals(items[6])) {
-            result = HGtoMG(input);
-            stringResult = String.valueOf(result);
-        }
-        else if (option1.equals(items[2]) && option2.equals(items[0])) {
-            result = MGtoKG(DAGtoMG(input));
-            stringResult = String.valueOf(result);
-        } else if (option1.equals(items[2]) && option2.equals(items[1])) {
-            result = MGtoHG(DAGtoMG(input));
-            stringResult = String.valueOf(result);
-        } else if (option1.equals(items[2]) && option2.equals(items[2])) {
-            stringResult = stringInput;
-        } else if (option1.equals(items[2]) && option2.equals(items[3])) {
-            result = MGtoG(DAGtoMG(input));
-            stringResult = String.valueOf(result);
-        } else if (option1.equals(items[2]) && option2.equals(items[4])) {
-            result = MGtoDG(DAGtoMG(input));
-            stringResult = String.valueOf(result);
-        } else if (option1.equals(items[2]) && option2.equals(items[5])) {
-            result = MGtoCG(DAGtoMG(input));
-            stringResult = String.valueOf(result);
-        } else if (option1.equals(items[2]) && option2.equals(items[6])) {
-            result = DAGtoMG(input);
-            stringResult = String.valueOf(result);
-        }
-        else if (option1.equals(items[3]) && option2.equals(items[0])) {
-            result = MGtoKG(GtoMG(input));
-            stringResult = String.valueOf(result);
-        } else if (option1.equals(items[3]) && option2.equals(items[1])) {
-            result = MGtoHG(GtoMG(input));
-            stringResult = String.valueOf(result);
-        } else if (option1.equals(items[3]) && option2.equals(items[2])) {
-            result = MGtoDAG(GtoMG(input));
-            stringResult = String.valueOf(result);
-        } else if (option1.equals(items[3]) && option2.equals(items[3])) {
-            stringResult = stringInput;
-        } else if (option1.equals(items[3]) && option2.equals(items[4])) {
-            result = MGtoDG(GtoMG(input));
-            stringResult = String.valueOf(result);
-        } else if (option1.equals(items[3]) && option2.equals(items[5])) {
-            result = MGtoCG(GtoMG(input));
-            stringResult = String.valueOf(result);
-        } else if (option1.equals(items[3]) && option2.equals(items[6])) {
-            result = GtoMG(input);
-            stringResult = String.valueOf(result);
-        }
-        else if (option1.equals(items[4]) && option2.equals(items[0])) {
-            result = MGtoKG(DGtoMG(input));
-            stringResult = String.format(Locale.GERMANY,"%,f", result);
-        } else if (option1.equals(items[4]) && option2.equals(items[1])) {
-            result = MGtoHG(DGtoMG(input));
-            stringResult = String.valueOf(result);
-        } else if (option1.equals(items[4]) && option2.equals(items[2])) {
-            result = MGtoDAG(DGtoMG(input));
-            stringResult = String.valueOf(result);
-        } else if (option1.equals(items[4]) && option2.equals(items[3])) {
-            result = MGtoG(DGtoMG(input));
-            stringResult = String.valueOf(result);
-        } else if (option1.equals(items[4]) && option2.equals(items[4])) {
-            stringResult = stringInput;
-        } else if (option1.equals(items[4]) && option2.equals(items[5])) {
-            result = MGtoCG(DGtoMG(input));
-            stringResult = String.valueOf(result);
-        } else if (option1.equals(items[4]) && option2.equals(items[6])) {
-            result = DGtoMG(input);
-            stringResult = String.valueOf(result);
-        }
-        else if (option1.equals(items[5]) && option2.equals(items[0])) {
-            result = MGtoKG(CGtoMG(input));
-            stringResult = String.format(Locale.GERMANY,"%,f", result);
-        } else if (option1.equals(items[5]) && option2.equals(items[1])) {
-            result = MGtoHG(CGtoMG(input));
-            stringResult = String.format(Locale.GERMANY,"%,f", result);
-        } else if (option1.equals(items[5]) && option2.equals(items[2])) {
-            result = MGtoDAG(CGtoMG(input));
-            stringResult = String.valueOf(result);
-        } else if (option1.equals(items[5]) && option2.equals(items[3])) {
-            result = MGtoG(CGtoMG(input));
-            stringResult = String.valueOf(result);
-        } else if (option1.equals(items[5]) && option2.equals(items[4])) {
-            result = MGtoDG(CGtoMG(input));
-            stringResult = String.valueOf(result);
-        } else if (option1.equals(items[5]) && option2.equals(items[5])) {
-            stringResult = stringInput;
-        } else if (option1.equals(items[5]) && option2.equals(items[6])) {
-            result = CGtoMG(input);
-            stringResult = String.valueOf(result);
-        }
-        else if (option1.equals(items[6]) && option2.equals(items[0])) {
-            result = MGtoKG(input);
-            stringResult = String.format(Locale.GERMANY,"%,f", result);
-        } else if (option1.equals(items[6]) && option2.equals(items[1])) {
-            result = MGtoHG(input);
-            stringResult = String.format(Locale.GERMANY,"%,f", result);
-        } else if (option1.equals(items[6]) && option2.equals(items[2])) {
-            result = MGtoDAG(input);
-            stringResult = String.format(Locale.GERMANY,"%,f", result);
-        } else if (option1.equals(items[6]) && option2.equals(items[3])) {
-            result = MGtoG(input);
-            stringResult = String.valueOf(result);
-        } else if (option1.equals(items[6]) && option2.equals(items[4])) {
-            result = MGtoDG(input);
-            stringResult = String.valueOf(result);
-        } else if (option1.equals(items[6]) && option2.equals(items[5])) {
-            result = MGtoCG(input);
-            stringResult = String.valueOf(result);
-        } else if (option1.equals(items[6]) && option2.equals(items[6])) {
-            stringResult = stringInput;
-        } else {
-            stringResult = "comming soon";
-        }
-
 
         return stringResult;
     }

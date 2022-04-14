@@ -83,86 +83,90 @@ public class DataActivity extends AppCompatActivity {
 
     // Jangan dibuka!!!
     private String ifElseMenu(String option1, String option2, double input) {
-        if (stringInput.trim().isEmpty()) {
-            stringResult = "Kosong";
-        }
-        else if (option1.equals(items[0]) && option2.equals(items[0])){
-            stringResult = stringInput;
-        } else if (option1.equals(items[0]) && option2.equals(items[1])) {
-            result = BytestoGiga(TeratoBytes(input));
-            stringResult = String.valueOf(result);
-        } else if (option1.equals(items[0]) && option2.equals(items[2])) {
-            result = BytestoMega(TeratoBytes(input));
-            stringResult = String.valueOf(result);
-        } else if (option1.equals(items[0]) && option2.equals(items[3])) {
-            result = BytestoKilo(TeratoBytes(input));
-            stringResult = String.valueOf(result);
-        } else if (option1.equals(items[0]) && option2.equals(items[4])) {
-            result = TeratoBytes(input);
-            stringResult = String.valueOf(result);
-        }
-        else if (option1.equals(items[1]) && option2.equals(items[0])){
-            result = BytestoTera(GigatoBytes(input));
-            stringResult = String.valueOf(result);
-        } else if (option1.equals(items[1]) && option2.equals(items[1])) {
-            stringResult = stringInput;
-        } else if (option1.equals(items[1]) && option2.equals(items[2])) {
-            result = BytestoMega(GigatoBytes(input));
-            stringResult = String.valueOf(result);
-        } else if (option1.equals(items[1]) && option2.equals(items[3])) {
-            result = BytestoKilo(GigatoBytes(input));
-            stringResult = String.valueOf(result);
-        } else if (option1.equals(items[1]) && option2.equals(items[4])) {
-            result = GigatoBytes(input);
-            stringResult = String.valueOf(result);
-        }
-        else if (option1.equals(items[2]) && option2.equals(items[0])){
-            result = BytestoTera(MegatoBytes(input));
-            stringResult = String.valueOf(result);
-        } else if (option1.equals(items[2]) && option2.equals(items[1])) {
-            result = BytestoGiga(MegatoBytes(input));
-            stringResult = String.valueOf(result);
-        } else if (option1.equals(items[2]) && option2.equals(items[2])) {
-            stringResult = stringInput;
-        } else if (option1.equals(items[2]) && option2.equals(items[3])) {
-            result = BytestoKilo(MegatoBytes(input));
-            stringResult = String.valueOf(result);
-        } else if (option1.equals(items[2]) && option2.equals(items[4])) {
-            result = MegatoBytes(input);
-            stringResult = String.valueOf(result);
-        }
-        else if (option1.equals(items[3]) && option2.equals(items[0])){
-            result = BytestoTera(KilotoBytes(input));
-            stringResult = String.valueOf(result);
-        } else if (option1.equals(items[3]) && option2.equals(items[1])) {
-            result = BytestoGiga(KilotoBytes(input));
-            stringResult = String.valueOf(result);
-        } else if (option1.equals(items[3]) && option2.equals(items[2])) {
-            result = BytestoMega(KilotoBytes(input));
-            stringResult = String.valueOf(result);
-        } else if (option1.equals(items[3]) && option2.equals(items[3])) {
-            stringResult = stringInput;
-        } else if (option1.equals(items[3]) && option2.equals(items[4])) {
-            result = KilotoBytes(input);
-            stringResult = String.valueOf(result);
-        }
-        else if (option1.equals(items[4]) && option2.equals(items[0])){
-            result = BytestoTera(input);
-            stringResult = String.valueOf(result);
-        } else if (option1.equals(items[4]) && option2.equals(items[1])) {
-            result = BytestoGiga(input);
-            stringResult = String.valueOf(result);
-        } else if (option1.equals(items[4]) && option2.equals(items[2])) {
-            result = BytestoMega(input);
-            stringResult = String.valueOf(result);
-        } else if (option1.equals(items[4]) && option2.equals(items[3])) {
-            result = KilotoBytes(input);
-            stringResult = String.valueOf(result);
-        } else if (option1.equals(items[4]) && option2.equals(items[4])) {
-            stringResult = stringInput;
-        }
-        else {
-            stringResult = "comming soon";
+        try {
+            if (stringInput.trim().isEmpty()) {
+                stringResult = "Kosong";
+            }
+            else if (option1.equals(items[0]) && option2.equals(items[0])){
+                stringResult = stringInput;
+            } else if (option1.equals(items[0]) && option2.equals(items[1])) {
+                result = BytestoGiga(TeratoBytes(input));
+                stringResult = String.valueOf(result);
+            } else if (option1.equals(items[0]) && option2.equals(items[2])) {
+                result = BytestoMega(TeratoBytes(input));
+                stringResult = String.valueOf(result);
+            } else if (option1.equals(items[0]) && option2.equals(items[3])) {
+                result = BytestoKilo(TeratoBytes(input));
+                stringResult = String.valueOf(result);
+            } else if (option1.equals(items[0]) && option2.equals(items[4])) {
+                result = TeratoBytes(input);
+                stringResult = String.valueOf(result);
+            }
+            else if (option1.equals(items[1]) && option2.equals(items[0])){
+                result = BytestoTera(GigatoBytes(input));
+                stringResult = String.valueOf(result);
+            } else if (option1.equals(items[1]) && option2.equals(items[1])) {
+                stringResult = stringInput;
+            } else if (option1.equals(items[1]) && option2.equals(items[2])) {
+                result = BytestoMega(GigatoBytes(input));
+                stringResult = String.valueOf(result);
+            } else if (option1.equals(items[1]) && option2.equals(items[3])) {
+                result = BytestoKilo(GigatoBytes(input));
+                stringResult = String.valueOf(result);
+            } else if (option1.equals(items[1]) && option2.equals(items[4])) {
+                result = GigatoBytes(input);
+                stringResult = String.valueOf(result);
+            }
+            else if (option1.equals(items[2]) && option2.equals(items[0])){
+                result = BytestoTera(MegatoBytes(input));
+                stringResult = String.valueOf(result);
+            } else if (option1.equals(items[2]) && option2.equals(items[1])) {
+                result = BytestoGiga(MegatoBytes(input));
+                stringResult = String.valueOf(result);
+            } else if (option1.equals(items[2]) && option2.equals(items[2])) {
+                stringResult = stringInput;
+            } else if (option1.equals(items[2]) && option2.equals(items[3])) {
+                result = BytestoKilo(MegatoBytes(input));
+                stringResult = String.valueOf(result);
+            } else if (option1.equals(items[2]) && option2.equals(items[4])) {
+                result = MegatoBytes(input);
+                stringResult = String.valueOf(result);
+            }
+            else if (option1.equals(items[3]) && option2.equals(items[0])){
+                result = BytestoTera(KilotoBytes(input));
+                stringResult = String.valueOf(result);
+            } else if (option1.equals(items[3]) && option2.equals(items[1])) {
+                result = BytestoGiga(KilotoBytes(input));
+                stringResult = String.valueOf(result);
+            } else if (option1.equals(items[3]) && option2.equals(items[2])) {
+                result = BytestoMega(KilotoBytes(input));
+                stringResult = String.valueOf(result);
+            } else if (option1.equals(items[3]) && option2.equals(items[3])) {
+                stringResult = stringInput;
+            } else if (option1.equals(items[3]) && option2.equals(items[4])) {
+                result = KilotoBytes(input);
+                stringResult = String.valueOf(result);
+            }
+            else if (option1.equals(items[4]) && option2.equals(items[0])){
+                result = BytestoTera(input);
+                stringResult = String.valueOf(result);
+            } else if (option1.equals(items[4]) && option2.equals(items[1])) {
+                result = BytestoGiga(input);
+                stringResult = String.valueOf(result);
+            } else if (option1.equals(items[4]) && option2.equals(items[2])) {
+                result = BytestoMega(input);
+                stringResult = String.valueOf(result);
+            } else if (option1.equals(items[4]) && option2.equals(items[3])) {
+                result = KilotoBytes(input);
+                stringResult = String.valueOf(result);
+            } else if (option1.equals(items[4]) && option2.equals(items[4])) {
+                stringResult = stringInput;
+            }
+            else {
+                stringResult = "comming soon";
+            }
+        } catch (Exception e) {
+            stringResult = "Opsi belum dipilih";
         }
 
         return stringResult;

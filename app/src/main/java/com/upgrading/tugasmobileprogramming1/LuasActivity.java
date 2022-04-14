@@ -80,58 +80,62 @@ public class LuasActivity extends AppCompatActivity {
 
     // Jangan dibuka!!!
     private String ifElseMenu(String option1, String option2, double input) {
-        if (stringInput.trim().isEmpty()) {
-            stringResult = "Kosong";
-        }
-        else if (option1.equals(items[0]) && option2.equals(items[0])){
-            stringResult = stringInput;
-        } else if (option1.equals(items[0]) && option2.equals(items[1])) {
-            result = KMtoHektar(input);
-            stringResult = String.valueOf(result);
-        } else if (option1.equals(items[0]) && option2.equals(items[2])) {
-            result = HektartoM(KMtoHektar(input));
-            stringResult = String.valueOf(result);
-        } else if (option1.equals(items[0]) && option2.equals(items[3])) {
-            result = HektartoCM(KMtoHektar(input));
-            stringResult = String.valueOf(result);
-        }
-        else if (option1.equals(items[1]) && option2.equals(items[0])){
-            result = HektartoKM(input);
-            stringResult = String.valueOf(result);
-        } else if (option1.equals(items[1]) && option2.equals(items[1])) {
-            stringResult = stringInput;
-        } else if (option1.equals(items[1]) && option2.equals(items[2])) {
-            result = HektartoM(input);
-            stringResult = String.valueOf(result);
-        } else if (option1.equals(items[1]) && option2.equals(items[3])) {
-            result = HektartoCM(input);
-            stringResult = String.valueOf(result);
-        }
-        else if (option1.equals(items[2]) && option2.equals(items[0])){
-            result = HektartoKM(MtoHektar(input));
-            stringResult = String.valueOf(result);
-        } else if (option1.equals(items[2]) && option2.equals(items[1])) {
-            result = MtoHektar(input);
-            stringResult = String.valueOf(result);
-        } else if (option1.equals(items[2]) && option2.equals(items[2])) {
-            stringResult = stringInput;
-        } else if (option1.equals(items[2]) && option2.equals(items[3])) {
-            result = HektartoCM(MtoHektar(input));
-            stringResult = String.valueOf(result);
-        }
-        else if (option1.equals(items[3]) && option2.equals(items[0])){
-            result = HektartoKM(CMtoHektar(input));
-            stringResult = String.valueOf(result);
-        } else if (option1.equals(items[3]) && option2.equals(items[1])) {
-            result = CMtoHektar(input);
-            stringResult = String.valueOf(result);
-        } else if (option1.equals(items[3]) && option2.equals(items[2])) {
-            result = HektartoCM(CMtoHektar(input));
-            stringResult = String.valueOf(result);
-        } else if (option1.equals(items[3]) && option2.equals(items[3])) {
-            stringResult = stringInput;
-        } else {
-            stringResult = "comming soon";
+        try {
+            if (stringInput.trim().isEmpty()) {
+                stringResult = "Kosong";
+            }
+            else if (option1.equals(items[0]) && option2.equals(items[0])){
+                stringResult = stringInput;
+            } else if (option1.equals(items[0]) && option2.equals(items[1])) {
+                result = KMtoHektar(input);
+                stringResult = String.valueOf(result);
+            } else if (option1.equals(items[0]) && option2.equals(items[2])) {
+                result = HektartoM(KMtoHektar(input));
+                stringResult = String.valueOf(result);
+            } else if (option1.equals(items[0]) && option2.equals(items[3])) {
+                result = HektartoCM(KMtoHektar(input));
+                stringResult = String.valueOf(result);
+            }
+            else if (option1.equals(items[1]) && option2.equals(items[0])){
+                result = HektartoKM(input);
+                stringResult = String.valueOf(result);
+            } else if (option1.equals(items[1]) && option2.equals(items[1])) {
+                stringResult = stringInput;
+            } else if (option1.equals(items[1]) && option2.equals(items[2])) {
+                result = HektartoM(input);
+                stringResult = String.valueOf(result);
+            } else if (option1.equals(items[1]) && option2.equals(items[3])) {
+                result = HektartoCM(input);
+                stringResult = String.valueOf(result);
+            }
+            else if (option1.equals(items[2]) && option2.equals(items[0])){
+                result = HektartoKM(MtoHektar(input));
+                stringResult = String.valueOf(result);
+            } else if (option1.equals(items[2]) && option2.equals(items[1])) {
+                result = MtoHektar(input);
+                stringResult = String.valueOf(result);
+            } else if (option1.equals(items[2]) && option2.equals(items[2])) {
+                stringResult = stringInput;
+            } else if (option1.equals(items[2]) && option2.equals(items[3])) {
+                result = HektartoCM(MtoHektar(input));
+                stringResult = String.valueOf(result);
+            }
+            else if (option1.equals(items[3]) && option2.equals(items[0])){
+                result = HektartoKM(CMtoHektar(input));
+                stringResult = String.valueOf(result);
+            } else if (option1.equals(items[3]) && option2.equals(items[1])) {
+                result = CMtoHektar(input);
+                stringResult = String.valueOf(result);
+            } else if (option1.equals(items[3]) && option2.equals(items[2])) {
+                result = HektartoCM(CMtoHektar(input));
+                stringResult = String.valueOf(result);
+            } else if (option1.equals(items[3]) && option2.equals(items[3])) {
+                stringResult = stringInput;
+            } else {
+                stringResult = "comming soon";
+            }
+        } catch (Exception e) {
+            stringResult = "Opsi belum dipilih";
         }
 
         return stringResult;

@@ -82,157 +82,161 @@ public class PanjangActivity extends AppCompatActivity {
 
     // Jangan dibuka!!!
     private String ifElseMenu(String option1, String option2, double input) {
-        if (stringInput.trim().isEmpty()) {
-            stringResult = "Kosong";
-        }
-        else if (option1.equals(items[0]) && option2.equals(items[0])){
-            stringResult = stringInput;
-        } else if (option1.equals(items[0]) && option2.equals(items[1])) {
-            result = MMtoHM(KMtoMM(input));
-            stringResult = String.valueOf(result);
-        } else if (option1.equals(items[0]) && option2.equals(items[2])) {
-            result = MMtoDAM(KMtoMM(input));
-            stringResult = String.valueOf(result);
-        } else if (option1.equals(items[0]) && option2.equals(items[3])) {
-            result = MMtoM(KMtoMM(input));
-            stringResult = String.valueOf(result);
-        } else if (option1.equals(items[0]) && option2.equals(items[4])) {
-            result = MMtoDM(KMtoMM(input));
-            stringResult = String.valueOf(result);
-        } else if (option1.equals(items[0]) && option2.equals(items[5])) {
-            result = MMtoCM(KMtoMM(input));
-            stringResult = String.valueOf(result);
-        } else if (option1.equals(items[0]) && option2.equals(items[6])) {
-            result = KMtoMM(input);
-            stringResult = String.valueOf(result);
-        }
-        else if (option1.equals(items[1]) && option2.equals(items[0])) {
-            result = MMtoKM(HMtoMM(input));
-            stringResult = String.valueOf(result);
-        } else if (option1.equals(items[1]) && option2.equals(items[1])) {
-            stringResult = stringInput;
-        } else if (option1.equals(items[1]) && option2.equals(items[2])) {
-            result = MMtoDAM(HMtoMM(input));
-            stringResult = String.valueOf(result);
-        } else if (option1.equals(items[1]) && option2.equals(items[3])) {
-            result = MMtoM(HMtoMM(input));
-            stringResult = String.valueOf(result);
-        } else if (option1.equals(items[1]) && option2.equals(items[4])) {
-            result = MMtoDM(HMtoMM(input));
-            stringResult = String.valueOf(result);
-        } else if (option1.equals(items[1]) && option2.equals(items[5])) {
-            result = MMtoCM(HMtoMM(input));
-            stringResult = String.valueOf(result);
-        } else if (option1.equals(items[1]) && option2.equals(items[6])) {
-            result = HMtoMM(input);
-            stringResult = String.valueOf(result);
-        }
-        else if (option1.equals(items[2]) && option2.equals(items[0])) {
-            result = MMtoKM(DAMtoMM(input));
-            stringResult = String.valueOf(result);
-        } else if (option1.equals(items[2]) && option2.equals(items[1])) {
-            result = MMtoHM(DAMtoMM(input));
-            stringResult = String.valueOf(result);
-        } else if (option1.equals(items[2]) && option2.equals(items[2])) {
-            stringResult = stringInput;
-        } else if (option1.equals(items[2]) && option2.equals(items[3])) {
-            result = MMtoM(DAMtoMM(input));
-            stringResult = String.valueOf(result);
-        } else if (option1.equals(items[2]) && option2.equals(items[4])) {
-            result = MMtoDM(DAMtoMM(input));
-            stringResult = String.valueOf(result);
-        } else if (option1.equals(items[2]) && option2.equals(items[5])) {
-            result = MMtoCM(DAMtoMM(input));
-            stringResult = String.valueOf(result);
-        } else if (option1.equals(items[2]) && option2.equals(items[6])) {
-            result = DAMtoMM(input);
-            stringResult = String.valueOf(result);
-        }
-        else if (option1.equals(items[3]) && option2.equals(items[0])) {
-            result = MMtoKM(MtoMM(input));
-            stringResult = String.valueOf(result);
-        } else if (option1.equals(items[3]) && option2.equals(items[1])) {
-            result = MMtoHM(MtoMM(input));
-            stringResult = String.valueOf(result);
-        } else if (option1.equals(items[3]) && option2.equals(items[2])) {
-            result = MMtoDAM(MtoMM(input));
-            stringResult = String.valueOf(result);
-        } else if (option1.equals(items[3]) && option2.equals(items[3])) {
-            stringResult = stringInput;
-        } else if (option1.equals(items[3]) && option2.equals(items[4])) {
-            result = MMtoDM(MtoMM(input));
-            stringResult = String.valueOf(result);
-        } else if (option1.equals(items[3]) && option2.equals(items[5])) {
-            result = MMtoCM(MtoMM(input));
-            stringResult = String.valueOf(result);
-        } else if (option1.equals(items[3]) && option2.equals(items[6])) {
-            result = MtoMM(input);
-            stringResult = String.valueOf(result);
-        }
-        else if (option1.equals(items[4]) && option2.equals(items[0])) {
-            result = MMtoKM(DMtoMM(input));
-            stringResult = String.format(Locale.GERMANY,"%,f", result);
-        } else if (option1.equals(items[4]) && option2.equals(items[1])) {
-            result = MMtoHM(DMtoMM(input));
-            stringResult = String.valueOf(result);
-        } else if (option1.equals(items[4]) && option2.equals(items[2])) {
-            result = MMtoDAM(DMtoMM(input));
-            stringResult = String.valueOf(result);
-        } else if (option1.equals(items[4]) && option2.equals(items[3])) {
-            result = MMtoM(DMtoMM(input));
-            stringResult = String.valueOf(result);
-        } else if (option1.equals(items[4]) && option2.equals(items[4])) {
-            stringResult = stringInput;
-        } else if (option1.equals(items[4]) && option2.equals(items[5])) {
-            result = MMtoCM(DMtoMM(input));
-            stringResult = String.valueOf(result);
-        } else if (option1.equals(items[4]) && option2.equals(items[6])) {
-            result = DMtoMM(input);
-            stringResult = String.valueOf(result);
-        }
-        else if (option1.equals(items[5]) && option2.equals(items[0])) {
-            result = MMtoKM(CMtoMM(input));
-            stringResult = String.format(Locale.GERMANY,"%,f", result);
-        } else if (option1.equals(items[5]) && option2.equals(items[1])) {
-            result = MMtoHM(CMtoMM(input));
-            stringResult = String.format(Locale.GERMANY,"%,f", result);
-        } else if (option1.equals(items[5]) && option2.equals(items[2])) {
-            result = MMtoDAM(CMtoMM(input));
-            stringResult = String.valueOf(result);
-        } else if (option1.equals(items[5]) && option2.equals(items[3])) {
-            result = MMtoM(CMtoMM(input));
-            stringResult = String.valueOf(result);
-        } else if (option1.equals(items[5]) && option2.equals(items[4])) {
-            result = MMtoDM(CMtoMM(input));
-            stringResult = String.valueOf(result);
-        } else if (option1.equals(items[5]) && option2.equals(items[5])) {
-            stringResult = stringInput;
-        } else if (option1.equals(items[5]) && option2.equals(items[6])) {
-            result = CMtoMM(input);
-            stringResult = String.valueOf(result);
-        }
-        else if (option1.equals(items[6]) && option2.equals(items[0])) {
-            result = MMtoKM(input);
-            stringResult = String.format(Locale.GERMANY,"%,f", result);
-        } else if (option1.equals(items[6]) && option2.equals(items[1])) {
-            result = MMtoHM(input);
-            stringResult = String.format(Locale.GERMANY,"%,f", result);
-        } else if (option1.equals(items[6]) && option2.equals(items[2])) {
-            result = MMtoDAM(input);
-            stringResult = String.format(Locale.GERMANY,"%,f", result);
-        } else if (option1.equals(items[6]) && option2.equals(items[3])) {
-            result = MMtoM(input);
-            stringResult = String.valueOf(result);
-        } else if (option1.equals(items[6]) && option2.equals(items[4])) {
-            result = MMtoDM(input);
-            stringResult = String.valueOf(result);
-        } else if (option1.equals(items[6]) && option2.equals(items[5])) {
-            result = MMtoCM(input);
-            stringResult = String.valueOf(result);
-        } else if (option1.equals(items[6]) && option2.equals(items[6])) {
-            stringResult = stringInput;
-        } else {
-            stringResult = "comming soon";
+        try {
+            if (stringInput.trim().isEmpty()) {
+                stringResult = "Kosong";
+            }
+            else if (option1.equals(items[0]) && option2.equals(items[0])){
+                stringResult = stringInput;
+            } else if (option1.equals(items[0]) && option2.equals(items[1])) {
+                result = MMtoHM(KMtoMM(input));
+                stringResult = String.valueOf(result);
+            } else if (option1.equals(items[0]) && option2.equals(items[2])) {
+                result = MMtoDAM(KMtoMM(input));
+                stringResult = String.valueOf(result);
+            } else if (option1.equals(items[0]) && option2.equals(items[3])) {
+                result = MMtoM(KMtoMM(input));
+                stringResult = String.valueOf(result);
+            } else if (option1.equals(items[0]) && option2.equals(items[4])) {
+                result = MMtoDM(KMtoMM(input));
+                stringResult = String.valueOf(result);
+            } else if (option1.equals(items[0]) && option2.equals(items[5])) {
+                result = MMtoCM(KMtoMM(input));
+                stringResult = String.valueOf(result);
+            } else if (option1.equals(items[0]) && option2.equals(items[6])) {
+                result = KMtoMM(input);
+                stringResult = String.valueOf(result);
+            }
+            else if (option1.equals(items[1]) && option2.equals(items[0])) {
+                result = MMtoKM(HMtoMM(input));
+                stringResult = String.valueOf(result);
+            } else if (option1.equals(items[1]) && option2.equals(items[1])) {
+                stringResult = stringInput;
+            } else if (option1.equals(items[1]) && option2.equals(items[2])) {
+                result = MMtoDAM(HMtoMM(input));
+                stringResult = String.valueOf(result);
+            } else if (option1.equals(items[1]) && option2.equals(items[3])) {
+                result = MMtoM(HMtoMM(input));
+                stringResult = String.valueOf(result);
+            } else if (option1.equals(items[1]) && option2.equals(items[4])) {
+                result = MMtoDM(HMtoMM(input));
+                stringResult = String.valueOf(result);
+            } else if (option1.equals(items[1]) && option2.equals(items[5])) {
+                result = MMtoCM(HMtoMM(input));
+                stringResult = String.valueOf(result);
+            } else if (option1.equals(items[1]) && option2.equals(items[6])) {
+                result = HMtoMM(input);
+                stringResult = String.valueOf(result);
+            }
+            else if (option1.equals(items[2]) && option2.equals(items[0])) {
+                result = MMtoKM(DAMtoMM(input));
+                stringResult = String.valueOf(result);
+            } else if (option1.equals(items[2]) && option2.equals(items[1])) {
+                result = MMtoHM(DAMtoMM(input));
+                stringResult = String.valueOf(result);
+            } else if (option1.equals(items[2]) && option2.equals(items[2])) {
+                stringResult = stringInput;
+            } else if (option1.equals(items[2]) && option2.equals(items[3])) {
+                result = MMtoM(DAMtoMM(input));
+                stringResult = String.valueOf(result);
+            } else if (option1.equals(items[2]) && option2.equals(items[4])) {
+                result = MMtoDM(DAMtoMM(input));
+                stringResult = String.valueOf(result);
+            } else if (option1.equals(items[2]) && option2.equals(items[5])) {
+                result = MMtoCM(DAMtoMM(input));
+                stringResult = String.valueOf(result);
+            } else if (option1.equals(items[2]) && option2.equals(items[6])) {
+                result = DAMtoMM(input);
+                stringResult = String.valueOf(result);
+            }
+            else if (option1.equals(items[3]) && option2.equals(items[0])) {
+                result = MMtoKM(MtoMM(input));
+                stringResult = String.valueOf(result);
+            } else if (option1.equals(items[3]) && option2.equals(items[1])) {
+                result = MMtoHM(MtoMM(input));
+                stringResult = String.valueOf(result);
+            } else if (option1.equals(items[3]) && option2.equals(items[2])) {
+                result = MMtoDAM(MtoMM(input));
+                stringResult = String.valueOf(result);
+            } else if (option1.equals(items[3]) && option2.equals(items[3])) {
+                stringResult = stringInput;
+            } else if (option1.equals(items[3]) && option2.equals(items[4])) {
+                result = MMtoDM(MtoMM(input));
+                stringResult = String.valueOf(result);
+            } else if (option1.equals(items[3]) && option2.equals(items[5])) {
+                result = MMtoCM(MtoMM(input));
+                stringResult = String.valueOf(result);
+            } else if (option1.equals(items[3]) && option2.equals(items[6])) {
+                result = MtoMM(input);
+                stringResult = String.valueOf(result);
+            }
+            else if (option1.equals(items[4]) && option2.equals(items[0])) {
+                result = MMtoKM(DMtoMM(input));
+                stringResult = String.format(Locale.GERMANY,"%,f", result);
+            } else if (option1.equals(items[4]) && option2.equals(items[1])) {
+                result = MMtoHM(DMtoMM(input));
+                stringResult = String.valueOf(result);
+            } else if (option1.equals(items[4]) && option2.equals(items[2])) {
+                result = MMtoDAM(DMtoMM(input));
+                stringResult = String.valueOf(result);
+            } else if (option1.equals(items[4]) && option2.equals(items[3])) {
+                result = MMtoM(DMtoMM(input));
+                stringResult = String.valueOf(result);
+            } else if (option1.equals(items[4]) && option2.equals(items[4])) {
+                stringResult = stringInput;
+            } else if (option1.equals(items[4]) && option2.equals(items[5])) {
+                result = MMtoCM(DMtoMM(input));
+                stringResult = String.valueOf(result);
+            } else if (option1.equals(items[4]) && option2.equals(items[6])) {
+                result = DMtoMM(input);
+                stringResult = String.valueOf(result);
+            }
+            else if (option1.equals(items[5]) && option2.equals(items[0])) {
+                result = MMtoKM(CMtoMM(input));
+                stringResult = String.format(Locale.GERMANY,"%,f", result);
+            } else if (option1.equals(items[5]) && option2.equals(items[1])) {
+                result = MMtoHM(CMtoMM(input));
+                stringResult = String.format(Locale.GERMANY,"%,f", result);
+            } else if (option1.equals(items[5]) && option2.equals(items[2])) {
+                result = MMtoDAM(CMtoMM(input));
+                stringResult = String.valueOf(result);
+            } else if (option1.equals(items[5]) && option2.equals(items[3])) {
+                result = MMtoM(CMtoMM(input));
+                stringResult = String.valueOf(result);
+            } else if (option1.equals(items[5]) && option2.equals(items[4])) {
+                result = MMtoDM(CMtoMM(input));
+                stringResult = String.valueOf(result);
+            } else if (option1.equals(items[5]) && option2.equals(items[5])) {
+                stringResult = stringInput;
+            } else if (option1.equals(items[5]) && option2.equals(items[6])) {
+                result = CMtoMM(input);
+                stringResult = String.valueOf(result);
+            }
+            else if (option1.equals(items[6]) && option2.equals(items[0])) {
+                result = MMtoKM(input);
+                stringResult = String.format(Locale.GERMANY,"%,f", result);
+            } else if (option1.equals(items[6]) && option2.equals(items[1])) {
+                result = MMtoHM(input);
+                stringResult = String.format(Locale.GERMANY,"%,f", result);
+            } else if (option1.equals(items[6]) && option2.equals(items[2])) {
+                result = MMtoDAM(input);
+                stringResult = String.format(Locale.GERMANY,"%,f", result);
+            } else if (option1.equals(items[6]) && option2.equals(items[3])) {
+                result = MMtoM(input);
+                stringResult = String.valueOf(result);
+            } else if (option1.equals(items[6]) && option2.equals(items[4])) {
+                result = MMtoDM(input);
+                stringResult = String.valueOf(result);
+            } else if (option1.equals(items[6]) && option2.equals(items[5])) {
+                result = MMtoCM(input);
+                stringResult = String.valueOf(result);
+            } else if (option1.equals(items[6]) && option2.equals(items[6])) {
+                stringResult = stringInput;
+            } else {
+                stringResult = "comming soon";
+            }
+        } catch (Exception e) {
+            stringResult = "Opsi belum dipilih";
         }
 
         return stringResult;

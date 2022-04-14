@@ -81,41 +81,45 @@ public class KecepatanActivity extends AppCompatActivity {
 
     // Jangan di buka
     private String ifElseMenu(String option1, String option2, double input) {
-        if (stringInput.trim().isEmpty()) {
-            stringResult = "Kosong";
-            return stringResult;
-        }
-        else if (option1.equals(items[0]) && option2.equals(items[0])) {
-            stringResult = stringInput;
-            return stringResult;
-        } else if (option1.equals(items[0]) && option2.equals(items[1])) {
-            result = milToKM(input);
-            stringResult = String.valueOf(result);
-        } else if (option1.equals(items[0]) && option2.equals(items[2])) {
-            result = milToM(input);
-            stringResult = String.valueOf(result);
-        }
-        else if (option1.equals(items[1]) && option2.equals(items[0])) {
-            result = kmToMil(input);
-            stringResult = String.valueOf(result);
-        } else if (option1.equals(items[1]) && option2.equals(items[1])) {
-            stringResult = stringInput;
-            return stringResult;
-        } else if (option1.equals(items[1]) && option2.equals(items[2])) {
-            result = kmToM(input);
-            stringResult = String.valueOf(result);
-        }
-        else if (option1.equals(items[2]) && option2.equals(items[0])) {
-            result = mToMil(input);
-            stringResult = String.valueOf(result);
-        } else if (option1.equals(items[2]) && option2.equals(items[1])) {
-            result = mToKM(input);
-            stringResult = String.valueOf(result);
-        } else if (option1.equals(items[2]) && option2.equals(items[2])) {
-            stringResult = stringInput;
-            return stringResult;
-        } else {
-            stringResult = "comming soon";
+        try {
+            if (stringInput.trim().isEmpty()) {
+                stringResult = "Kosong";
+                return stringResult;
+            }
+            else if (option1.equals(items[0]) && option2.equals(items[0])) {
+                stringResult = stringInput;
+                return stringResult;
+            } else if (option1.equals(items[0]) && option2.equals(items[1])) {
+                result = milToKM(input);
+                stringResult = String.valueOf(result);
+            } else if (option1.equals(items[0]) && option2.equals(items[2])) {
+                result = milToM(input);
+                stringResult = String.valueOf(result);
+            }
+            else if (option1.equals(items[1]) && option2.equals(items[0])) {
+                result = kmToMil(input);
+                stringResult = String.valueOf(result);
+            } else if (option1.equals(items[1]) && option2.equals(items[1])) {
+                stringResult = stringInput;
+                return stringResult;
+            } else if (option1.equals(items[1]) && option2.equals(items[2])) {
+                result = kmToM(input);
+                stringResult = String.valueOf(result);
+            }
+            else if (option1.equals(items[2]) && option2.equals(items[0])) {
+                result = mToMil(input);
+                stringResult = String.valueOf(result);
+            } else if (option1.equals(items[2]) && option2.equals(items[1])) {
+                result = mToKM(input);
+                stringResult = String.valueOf(result);
+            } else if (option1.equals(items[2]) && option2.equals(items[2])) {
+                stringResult = stringInput;
+                return stringResult;
+            } else {
+                stringResult = "comming soon";
+            }
+        } catch (Exception e) {
+            stringResult = "Opsi belum dipilih";
         }
 
         int angkaSignifikan = 6;

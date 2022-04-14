@@ -79,125 +79,129 @@ public class WaktuActivity extends AppCompatActivity {
 
     // Don't open it
     private String ifElseMenu(String option1, String option2, double input) {
-        if (stringInput.trim().isEmpty()) {
-            stringResult = "Kosong";
-            return stringResult;
-        }
-        else if (option1.equals(items[0]) && option2.equals(items[0])) {
-            stringResult = stringInput;
-            return stringResult;
-        } else if (option1.equals(items[0]) && option2.equals(items[1])) {
-            result = detikToMenit(input);
-            stringResult = String.valueOf(result);
-        } else if (option1.equals(items[0]) && option2.equals(items[2])) {
-            result = detikToJam(input);
-            stringResult = String.valueOf(result);
-        } else if (option1.equals(items[0]) && option2.equals(items[3])) {
-            result = detikToHari(input);
-            stringResult = String.valueOf(result);
-        } else if (option1.equals(items[0]) && option2.equals(items[4])) {
-            result = detikToMinggu(input);
-            stringResult = String.valueOf(result);
-        } else if (option1.equals(items[0]) && option2.equals(items[5])) {
-            result = detikToTahun(input);
-            stringResult = String.valueOf(result);
-        }
-        else if (option1.equals(items[1]) && option2.equals(items[0])) {
-            result = menitToDetik(input);
-            stringResult = String.valueOf(result);
-        } else if (option1.equals(items[1]) && option2.equals(items[1])) {
-            stringResult = stringInput;
-            return stringResult;
-        } else if (option1.equals(items[1]) && option2.equals(items[2])) {
-            result = detikToJam(menitToDetik(input));
-            stringResult = String.valueOf(result);
-        } else if (option1.equals(items[1]) && option2.equals(items[3])) {
-            result = detikToHari(menitToDetik(input));
-            stringResult = String.valueOf(result);
-        } else if (option1.equals(items[1]) && option2.equals(items[4])) {
-            result = detikToMinggu(menitToDetik(input));
-            stringResult = String.valueOf(result);
-        } else if (option1.equals(items[1]) && option2.equals(items[5])) {
-            result = detikToTahun(menitToDetik(input));
-            stringResult = String.valueOf(result);
-        }
-        else if (option1.equals(items[2]) && option2.equals(items[0])) {
-            result = jamToDetik(input);
-            stringResult = String.valueOf(result);
-        } else if (option1.equals(items[2]) && option2.equals(items[1])) {
-            result = detikToMenit(jamToDetik(input));
-            stringResult = String.valueOf(result);
-        } else if (option1.equals(items[2]) && option2.equals(items[2])) {
-            stringResult = stringInput;
-            return stringResult;
-        } else if (option1.equals(items[2]) && option2.equals(items[3])) {
-            result = detikToHari(jamToDetik(input));
-            stringResult = String.valueOf(result);
-        } else if (option1.equals(items[2]) && option2.equals(items[4])) {
-            result = detikToMinggu(jamToDetik(input));
-            stringResult = String.valueOf(result);
-        } else if (option1.equals(items[2]) && option2.equals(items[5])) {
-            result = detikToTahun(jamToDetik(input));
-            stringResult = String.valueOf(result);
-        }
-        else if (option1.equals(items[3]) && option2.equals(items[0])) {
-            result = hariToDetik(input);
-            stringResult = String.valueOf(result);
-        } else if (option1.equals(items[3]) && option2.equals(items[1])) {
-            result = detikToMenit(hariToDetik(input));
-            stringResult = String.valueOf(result);
-        } else if (option1.equals(items[3]) && option2.equals(items[2])) {
-            result = detikToJam(hariToDetik(input));
-            stringResult = String.valueOf(result);
-        } else if (option1.equals(items[3]) && option2.equals(items[3])) {
-            stringResult = stringInput;
-            return stringResult;
-        } else if (option1.equals(items[3]) && option2.equals(items[4])) {
-            result = detikToMinggu(hariToDetik(input));
-            stringResult = String.valueOf(result);
-        } else if (option1.equals(items[3]) && option2.equals(items[5])) {
-            result = detikToTahun(hariToDetik(input));
-            stringResult = String.valueOf(result);
-        }
-        else if (option1.equals(items[4]) && option2.equals(items[0])) {
-            result = mingguToDetik(input);
-            stringResult = String.valueOf(result);
-        } else if (option1.equals(items[4]) && option2.equals(items[1])) {
-            result = detikToMenit(mingguToDetik(input));
-            stringResult = String.valueOf(result);
-        } else if (option1.equals(items[4]) && option2.equals(items[2])) {
-            result = detikToJam(mingguToDetik(input));
-            stringResult = String.valueOf(result);
-        } else if (option1.equals(items[4]) && option2.equals(items[3])) {
-            result = detikToHari(mingguToDetik(input));
-            stringResult = String.valueOf(result);
-        } else if (option1.equals(items[4]) && option2.equals(items[4])) {
-            stringResult = stringInput;
-            return stringResult;
-        } else if (option1.equals(items[4]) && option2.equals(items[5])) {
-            result = detikToTahun(mingguToDetik(input));
-            stringResult = String.valueOf(result);
-        }
-        else if (option1.equals(items[5]) && option2.equals(items[0])) {
-            result = tahunToDetik(input);
-            stringResult = String.valueOf(result);
-        } else if (option1.equals(items[5]) && option2.equals(items[1])) {
-            result = detikToMenit(tahunToDetik(input));
-            stringResult = String.valueOf(result);
-        } else if (option1.equals(items[5]) && option2.equals(items[2])) {
-            result = detikToJam(tahunToDetik(input));
-            stringResult = String.valueOf(result);
-        } else if (option1.equals(items[5]) && option2.equals(items[3])) {
-            result = detikToHari(tahunToDetik(input));
-            stringResult = String.valueOf(result);
-        } else if (option1.equals(items[5]) && option2.equals(items[4])) {
-            result = detikToMinggu(tahunToDetik(input));
-            stringResult = String.valueOf(result);
-        } else if (option1.equals(items[5]) && option2.equals(items[5])) {
-            stringResult = stringInput;
-            return stringResult;
-        } else {
-            stringResult = "comming soon";
+        try {
+            if (stringInput.trim().isEmpty()) {
+                stringResult = "Kosong";
+                return stringResult;
+            }
+            else if (option1.equals(items[0]) && option2.equals(items[0])) {
+                stringResult = stringInput;
+                return stringResult;
+            } else if (option1.equals(items[0]) && option2.equals(items[1])) {
+                result = detikToMenit(input);
+                stringResult = String.valueOf(result);
+            } else if (option1.equals(items[0]) && option2.equals(items[2])) {
+                result = detikToJam(input);
+                stringResult = String.valueOf(result);
+            } else if (option1.equals(items[0]) && option2.equals(items[3])) {
+                result = detikToHari(input);
+                stringResult = String.valueOf(result);
+            } else if (option1.equals(items[0]) && option2.equals(items[4])) {
+                result = detikToMinggu(input);
+                stringResult = String.valueOf(result);
+            } else if (option1.equals(items[0]) && option2.equals(items[5])) {
+                result = detikToTahun(input);
+                stringResult = String.valueOf(result);
+            }
+            else if (option1.equals(items[1]) && option2.equals(items[0])) {
+                result = menitToDetik(input);
+                stringResult = String.valueOf(result);
+            } else if (option1.equals(items[1]) && option2.equals(items[1])) {
+                stringResult = stringInput;
+                return stringResult;
+            } else if (option1.equals(items[1]) && option2.equals(items[2])) {
+                result = detikToJam(menitToDetik(input));
+                stringResult = String.valueOf(result);
+            } else if (option1.equals(items[1]) && option2.equals(items[3])) {
+                result = detikToHari(menitToDetik(input));
+                stringResult = String.valueOf(result);
+            } else if (option1.equals(items[1]) && option2.equals(items[4])) {
+                result = detikToMinggu(menitToDetik(input));
+                stringResult = String.valueOf(result);
+            } else if (option1.equals(items[1]) && option2.equals(items[5])) {
+                result = detikToTahun(menitToDetik(input));
+                stringResult = String.valueOf(result);
+            }
+            else if (option1.equals(items[2]) && option2.equals(items[0])) {
+                result = jamToDetik(input);
+                stringResult = String.valueOf(result);
+            } else if (option1.equals(items[2]) && option2.equals(items[1])) {
+                result = detikToMenit(jamToDetik(input));
+                stringResult = String.valueOf(result);
+            } else if (option1.equals(items[2]) && option2.equals(items[2])) {
+                stringResult = stringInput;
+                return stringResult;
+            } else if (option1.equals(items[2]) && option2.equals(items[3])) {
+                result = detikToHari(jamToDetik(input));
+                stringResult = String.valueOf(result);
+            } else if (option1.equals(items[2]) && option2.equals(items[4])) {
+                result = detikToMinggu(jamToDetik(input));
+                stringResult = String.valueOf(result);
+            } else if (option1.equals(items[2]) && option2.equals(items[5])) {
+                result = detikToTahun(jamToDetik(input));
+                stringResult = String.valueOf(result);
+            }
+            else if (option1.equals(items[3]) && option2.equals(items[0])) {
+                result = hariToDetik(input);
+                stringResult = String.valueOf(result);
+            } else if (option1.equals(items[3]) && option2.equals(items[1])) {
+                result = detikToMenit(hariToDetik(input));
+                stringResult = String.valueOf(result);
+            } else if (option1.equals(items[3]) && option2.equals(items[2])) {
+                result = detikToJam(hariToDetik(input));
+                stringResult = String.valueOf(result);
+            } else if (option1.equals(items[3]) && option2.equals(items[3])) {
+                stringResult = stringInput;
+                return stringResult;
+            } else if (option1.equals(items[3]) && option2.equals(items[4])) {
+                result = detikToMinggu(hariToDetik(input));
+                stringResult = String.valueOf(result);
+            } else if (option1.equals(items[3]) && option2.equals(items[5])) {
+                result = detikToTahun(hariToDetik(input));
+                stringResult = String.valueOf(result);
+            }
+            else if (option1.equals(items[4]) && option2.equals(items[0])) {
+                result = mingguToDetik(input);
+                stringResult = String.valueOf(result);
+            } else if (option1.equals(items[4]) && option2.equals(items[1])) {
+                result = detikToMenit(mingguToDetik(input));
+                stringResult = String.valueOf(result);
+            } else if (option1.equals(items[4]) && option2.equals(items[2])) {
+                result = detikToJam(mingguToDetik(input));
+                stringResult = String.valueOf(result);
+            } else if (option1.equals(items[4]) && option2.equals(items[3])) {
+                result = detikToHari(mingguToDetik(input));
+                stringResult = String.valueOf(result);
+            } else if (option1.equals(items[4]) && option2.equals(items[4])) {
+                stringResult = stringInput;
+                return stringResult;
+            } else if (option1.equals(items[4]) && option2.equals(items[5])) {
+                result = detikToTahun(mingguToDetik(input));
+                stringResult = String.valueOf(result);
+            }
+            else if (option1.equals(items[5]) && option2.equals(items[0])) {
+                result = tahunToDetik(input);
+                stringResult = String.valueOf(result);
+            } else if (option1.equals(items[5]) && option2.equals(items[1])) {
+                result = detikToMenit(tahunToDetik(input));
+                stringResult = String.valueOf(result);
+            } else if (option1.equals(items[5]) && option2.equals(items[2])) {
+                result = detikToJam(tahunToDetik(input));
+                stringResult = String.valueOf(result);
+            } else if (option1.equals(items[5]) && option2.equals(items[3])) {
+                result = detikToHari(tahunToDetik(input));
+                stringResult = String.valueOf(result);
+            } else if (option1.equals(items[5]) && option2.equals(items[4])) {
+                result = detikToMinggu(tahunToDetik(input));
+                stringResult = String.valueOf(result);
+            } else if (option1.equals(items[5]) && option2.equals(items[5])) {
+                stringResult = stringInput;
+                return stringResult;
+            } else {
+                stringResult = "comming soon";
+            }
+        } catch (Exception e) {
+            stringResult = "Opsi belum dipilih";
         }
 
         int angkaSignifikan = 6;
